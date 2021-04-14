@@ -28,6 +28,15 @@
         <h2 v-if="cantidad > 500 ">Cantidad: {{ cantidad }}</h2>
         <h2 v-else-if="cantidad <= 500 && cantidad > 0">Cantidad: <span style="color:red;"> {{cantidad}} </span></h2>
         <h2 v-else>Sin cantidad</h2>
+        <hr>
+
+        <!-- v-for  -->
+        <h2>Servicios disponibles:</h2>
+        <ul>
+            <li v-for="(item, index) in servicios" :key="index">
+                {{ index +1}} - {{ item }}
+            </li>
+        </ul>
     </div>
 
     <script src="assets/js/main-app.js"></script>

@@ -5,7 +5,8 @@ const app = Vue.createApp({
             titulo: 'Banco con Vue.js',
             cantidad: 0,
             enlace: 'https://youtube.com/',
-            estado: false
+            estado: false,
+            servicios : ['transferencias', 'pagos', 'giros', 'cheques']
         }
     }
 
