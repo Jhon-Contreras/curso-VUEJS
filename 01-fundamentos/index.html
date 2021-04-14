@@ -37,6 +37,17 @@
                 {{ index +1}} - {{ item }}
             </li>
         </ul>
+
+        <hr>
+        <!-- v-on:click y methods -->
+        <button v-on:click="agregarSaldo">Agregar saldo</button>
+        <!-- abreviacion v-on  -->
+        <button @click="agregarSaldo">Agregar saldo</button>
+
+        <hr>
+        <!-- :disabled  -->
+        <!-- parametros a metodos  -->
+        <button @click="disminuirSaldo(500)" :disabled="desactivar">Disminuir saldo</button>
     </div>
 
     <script src="assets/js/main-app.js"></script>
