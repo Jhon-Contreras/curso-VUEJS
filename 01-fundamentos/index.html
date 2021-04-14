@@ -11,9 +11,9 @@
 <body>
     
     <div id="app">
-        <h1> {{ titulo }} </h1>
+        <h1> {{ tituloMayuscula }} </h1>
         <!-- clase dinámica  -->
-        <h2 class="bg-dark" :class="[cantidad > 500 ? 'text-success' : 'text-danger']"> Mi saldo disponible es: {{ cantidad }} </h2>
+        <h2 class="bg-dark" :class="colorCantidad"> Mi saldo disponible es: {{ cantidad }} </h2>
         <!-- v-bind -->
         <a v-bind:href="enlace">Ir al enlace</a>
         <!-- v-bind de forma abreviada  -->
