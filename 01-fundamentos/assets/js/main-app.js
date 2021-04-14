@@ -1,8 +1,10 @@
-
+// instaciamos vue 
 const app = Vue.createApp({
     data(){
         return{
-            titulo: 'Hola mundo con Vue.js CDN'
+            titulo: 'Banco con Vue.js',
+            cantidad: 1000,
+            enlace: 'https://youtube.com/'
         }
     }
 

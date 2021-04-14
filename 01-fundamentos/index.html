@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,16 @@
     
     <div id="app">
         <h1> {{ titulo }} </h1>
+        <h2> Mi saldo disponible es: {{ cantidad }} </h2>
+        <!-- v-bind -->
+        <a v-bind:href="enlace">Ir al enlace</a>
+        <!-- v-bind de forma abreviada  -->
+        <a :href="enlace">Ir al enlace</a>
     </div>
 
     <script src="assets/js/main-app.js"></script>
     <script>
+        // aquí se monta la app 
         const mountedApp = app.mount('#app');
     </script>
 </body>
