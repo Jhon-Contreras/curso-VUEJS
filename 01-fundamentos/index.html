@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso VueJS</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
     
+    <div id="app">
+        <h1> {{ titulo }} </h1>
+    </div>
+
+    <script src="assets/js/main-app.js"></script>
+    <script>
+        const mountedApp = app.mount('#app');
+    </script>
 </body>
 </html>
