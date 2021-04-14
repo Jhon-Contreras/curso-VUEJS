@@ -16,6 +16,18 @@
         <a v-bind:href="enlace">Ir al enlace</a>
         <!-- v-bind de forma abreviada  -->
         <a :href="enlace">Ir al enlace</a>
+
+        <hr>
+        <!-- v-if  -->
+        <h2 v-if="estado">Cuenta activa</h2>
+        <!-- v-else  -->
+        <h2 v-else> Cuenta desactivada</h2>
+
+        <hr>
+
+        <h2 v-if="cantidad > 500 ">Cantidad: {{ cantidad }}</h2>
+        <h2 v-else-if="cantidad <= 500 && cantidad > 0">Cantidad: <span style="color:red;"> {{cantidad}} </span></h2>
+        <h2 v-else>Sin cantidad</h2>
     </div>
 
     <script src="assets/js/main-app.js"></script>
