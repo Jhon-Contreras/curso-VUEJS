@@ -51,7 +51,10 @@
         <!-- parametros a metodos  -->
         <button @click="disminuirSaldo(100)" :disabled="desactivar">Disminuir saldo</button>
          <!-- footer component  html-->
-         <footer-banco></footer-banco>
+         <footer-banco 
+            :valor="cantidad"
+            fecha=""
+            />
     </div>
     
 
@@ -59,7 +62,6 @@
 
     <script src="assets/js/main-app.js"></script>
     <!-- footer component  -->
-
     <script src="components/Footer.js"></script>
     <script>
         // aquí se monta la app 
