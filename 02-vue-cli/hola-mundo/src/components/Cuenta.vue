@@ -13,8 +13,8 @@
         </ul>
     </div>
     <!-- componente hijo  -->
-    <AccionSaldo/>
-    <AccionSaldo/>
+    <AccionSaldo texto="Aumentar Saldo"/>
+    <AccionSaldo texto ="Disminuir Saldo"/>
 </template>
 
 <script>
