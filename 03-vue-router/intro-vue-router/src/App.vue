@@ -1,8 +1,10 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+     <router-link to="/blog">Blog</router-link>
   </div>
+
   <router-view/>
 </template>
 
@@ -23,7 +25,7 @@
   font-weight: bold;
   color: #2c3e50;
 }
-
+/* estilo para el active del menu  */
 #nav a.router-link-exact-active {
   color: #42b983;
 }
