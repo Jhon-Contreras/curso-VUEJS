@@ -14,7 +14,7 @@
            
             <p>{{ articulo.body }} </p>
     
-            <a href="../blog" class="volver"> Volver a todos los posts</a>
+           
          </div>
     </div>
 </template>
