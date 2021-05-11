@@ -1,9 +1,7 @@
 <template>
     <div>
          <Titulo texto="Titulo de mi blog" />
-
-         <button @click="consumirApi"> Consumir API</button>
-
+         <!-- <button @click="consumirApi"> Consumir API</button> -->
          <div v-for="item in arrayBlog" :key="item.id">
              {{ item.title }}
          </div>
@@ -32,6 +30,10 @@ export default {
             }
         }
     },
+    // ciclo de vida de vue / no es recomendable usar funciones de flecha porque esta no tiene acceso al this
+    created(){
+        this.consumirApi()
+    }
 }
 </script>
 <style lang="">
