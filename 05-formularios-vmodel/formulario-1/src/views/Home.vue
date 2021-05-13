@@ -72,6 +72,14 @@ export default {
             return
         }
         console.log("No está vacio");
+        // envian los datos 
+
+        this.tarea = {
+          nombre: '',
+          categorias: [],
+          estado: '',
+          numero: 0
+        }
       }
     },
     computed:{
