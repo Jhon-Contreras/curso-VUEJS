@@ -35,7 +35,7 @@
                   <input type="number" class="form-control" v-model.number="tarea.numero">
               </div>
 
-              <button class="btn btn-success mt-3" type="submit">Procesar</button>
+              <button class="btn btn-success mt-3" type="submit" :disabled="bloquear">Procesar</button>
               <hr>
           </form>
 
@@ -67,8 +67,18 @@ export default {
     methods: {
       procesarFormulario(){
         console.log(this.tarea);
+        if (this.tarea.nombre.trim() === "") {
+            console.log("Campo vacio");
+            return
+        }
+        console.log("No está vacio");
       }
     },
+    computed:{
+      bloquear(){
+        return this.tarea.nombre.trim() === "" ? true : false
+      }
+    }
   }
  
 </script>
