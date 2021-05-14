@@ -9,8 +9,12 @@
               <hr>
           </form>
 
-          <p>{{tarea}}</p>
+         
         </div>
+
+        <br>
+
+        <ListaTareas/>
       </div>
     </div>
 </template>
@@ -18,6 +22,7 @@
 <script>
 
 import Input from '../components/Input'
+import ListaTareas from '../components/ListaTareas'
 import {mapActions} from 'vuex'
 
 // llamamos al paquete short id
@@ -26,7 +31,8 @@ const shortid = require('shortid')
 export default {
   name: 'Home',
     components: {
-      Input
+      Input,
+      ListaTareas
     },
     data() {
       return {
@@ -56,6 +62,7 @@ export default {
 
         // limpiamos los campos 
         this.tarea = {
+          id: '',
           nombre: '',
           categorias: [],
           estado: '',
