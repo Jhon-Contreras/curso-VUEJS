@@ -17,11 +17,21 @@ export default createStore({
       // empujamos la tarea dentro del array 
       state.tareas.push(payload)
       console.log(state.tareas);
+    },
+    // mutacion para eliminar tarea del array 
+    eliminar(state, payload){
+      // filtramos, decimos que por cada recorrido vamos a preguntar si item.id es distinto al id que estamos recibiendo (payload) 
+      state.tareas = state.tareas.filter(item => item.id !== payload)
     }
   },
   actions: {
-    setTareas({commit}, tarea){ //recibimos una tarea desde el formulario
+    //recibimos una tarea desde el formulario
+    setTareas({commit}, tarea){ 
       commit('set', tarea)
+    },
+    //accion para eliminar una tearea
+    deleteTarea({commit}, id){
+      commit('eliminar', id)
     }
   },
   modules: {

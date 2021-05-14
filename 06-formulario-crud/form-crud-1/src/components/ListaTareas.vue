@@ -22,7 +22,9 @@
                 <td>{{item.estado}}</td>
                 <td>{{item.numeros}}</td>
                
-                <td>Accion</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" @click="deleteTarea(item.id)">Eliminar</button>
+                </td>
             </tr>
          
         </tbody>
@@ -32,12 +34,18 @@
 
 <script>
 
-import {mapState} from 'vuex'
+import {mapState, mapActions} from 'vuex'
 export default {
     //llamamos a toda la lista de tareas desde la tienda
     computed:{
         ...mapState(['tareas'])
+       
+    },
+    // recibimos la accion de eliminar tareas
+    methods :{
+        ...mapActions(['deleteTarea'])
     }
+
     
 }
 </script>
