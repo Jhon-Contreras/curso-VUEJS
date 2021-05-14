@@ -22,6 +22,12 @@ export default createStore({
     eliminar(state, payload){
       // filtramos, decimos que por cada recorrido vamos a preguntar si item.id es distinto al id que estamos recibiendo (payload) 
       state.tareas = state.tareas.filter(item => item.id !== payload)
+    },
+    //mutacion para cargar datos boton editar tarea
+    tarea(state, payload){
+        // buscamos el id entre el array de tareas 
+        // funcion find() busca algo dentro de un array 
+        state.tarea = state.tareas.find(item => item.id === payload)
     }
   },
   actions: {
@@ -32,6 +38,10 @@ export default createStore({
     //accion para eliminar una tearea
     deleteTarea({commit}, id){
       commit('eliminar', id)
+    },
+    // accion para pasar datos boton editar tarea 
+    setTarea({commit}, id){
+      commit('tarea', id)
     }
   },
   modules: {

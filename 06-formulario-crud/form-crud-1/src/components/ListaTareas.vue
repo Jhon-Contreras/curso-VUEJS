@@ -24,6 +24,18 @@
                
                 <td>
                     <button class="btn btn-danger btn-sm" @click="deleteTarea(item.id)">Eliminar</button>
+                    <!-- boton actualizar datos  -->
+                    <!-- mediante el to, vamos a la vista Editar, con params enviamos el id de la tarea y la recibimos en la vista Editar  -->
+                    <router-link class="btn btn-warning mx-2 btn-sm" 
+                    :to="{
+                        name: 'Editar', 
+                            params: { 
+                                id: item.id
+                            }
+                        }"
+                    > 
+                        Editar
+                    </router-link>
                 </td>
             </tr>
          
