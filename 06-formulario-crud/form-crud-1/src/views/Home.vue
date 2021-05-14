@@ -46,7 +46,9 @@ export default {
       }
     },
     methods: {
+      // recibimos action para crear tareas 
       ...mapActions(['setTareas']),
+      // funcion al clickear Procesar 
       procesarFormulario(){
         console.log(this.tarea);
         if (this.tarea.nombre.trim() === "") {

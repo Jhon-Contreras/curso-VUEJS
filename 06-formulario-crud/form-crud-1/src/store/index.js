@@ -12,19 +12,27 @@ export default createStore({
         numero: 0
     }
   },
-  // para agregar elementos al array usamos mutaciones y acciones 
+  // para agregar elementos al array usamos mutaciones 
   mutations: {
+    // mutacion cargar localstorage 
+    cargar(state, payload){
+      state.tareas = payload
+    },
+    // mutacion para crear una tarea 
     set(state, payload){ //la mutacion recibe un state (array) y el payload (tarea)
       // empujamos la tarea dentro del array 
       state.tareas.push(payload)
-      console.log(state.tareas);
+      // cada vez que se empuja una nueva tarea, la guardamos en el localStorage 
+      localStorage.setItem('tareas', JSON.stringify(state.tareas))
     },
     // mutacion para eliminar tarea del array 
     eliminar(state, payload){
       // filtramos, decimos que por cada recorrido vamos a preguntar si item.id es distinto al id que estamos recibiendo (payload) 
       state.tareas = state.tareas.filter(item => item.id !== payload)
+      // cada vez que se elimina una tarea, actualizamos localStorage 
+      localStorage.setItem('tareas', JSON.stringify(state.tareas))
     },
-    //mutacion para cargar datos boton editar tarea
+    //mutacion para cargar datos en vista Editar, al clickear boton editar tarea
     tarea(state, payload){
        
         // si no encuentra esta validacion, aplicamos router.push para que el usuario no acceda a vista Editar/id sin haber presionado el boton editar 
@@ -45,10 +53,26 @@ export default createStore({
       state.tareas = state.tareas.map(item => item.id === payload ? payload : item)
       // luego de actualizar, empujamos al usuario al home
       router.push('/')
+      // actualizamos el localStorage 
+      localStorage.setItem('tareas', JSON.stringify(state.tareas))
     }
   },
+
+  // para enviar una modificacion a las mutaciones, usamos actions 
   actions: {
-    //recibimos una tarea desde el formulario
+    // cargar local storage
+    cargarLocalStorage({commit}){
+      // si existieran tareas en el localStorage 
+      if (localStorage.getItem('tareas')) {
+        // obtenemos las tareas 
+        const tareas = JSON.parse(localStorage.getItem('tareas'))
+        commit('cargar', tareas)
+        return  
+      }
+      // si no hay tareas, creamos una info tareas en el localStorage
+      localStorage.setItem('tareas', JSON.stringify([]))
+    },
+    //accion para crear tarea
     setTareas({commit}, tarea){ 
       commit('set', tarea)
     },
