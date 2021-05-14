@@ -39,7 +39,7 @@ export default {
     },
     computed:{
         bloquear(){
-        return this.tarea.nombre.trim() === "" ? true : false
+         return this.tarea.nombre.trim() === "" ? true : false
         }
     }
 }
